@@ -16,7 +16,7 @@ export function CarouselCustomNavigation() {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     speed: 1000,
     autoplaySpeed: 5000,
     nextArrow: <ButtonInvisiable />,

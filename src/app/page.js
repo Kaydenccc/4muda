@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <div className="w-full">
       <section className="h-auto md:h-[35.625rem] w-full px-0 sm:px-24 pt-8 md:pt-10">
-        <div className="flex bg-[#151D28] flex-col-reverse sm:flex-row items-end w-full h-full text-white rounded-nonemd:rounded-3xl">
+        <div className="flex bg-[#151D28] flex-col-reverse sm:flex-row items-end w-full h-full text-white rounded-none md:rounded-3xl">
           <div className="w-full md:w-[55%] h-full p-4 sm:p-20 flex flex-col justify-between">
             <Typography variant={'h1'} className="text-[2.5rem] sm:text-5xl md:text-6xl leading-[1.3] font-normal font-['Squada_One']">
               Temukan Properti Impianmu Sekarang
