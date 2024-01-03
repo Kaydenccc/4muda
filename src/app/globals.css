@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&family=Squada+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    background-color: rgba(40, 49, 57, 0.5);
+  }
+
+  .no-scrollbar::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+  .no-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(22, 31, 39, 0.123);
+    border-radius: 10px;
+  }
+  .no-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #8f9eac8a #ffffff;
+  }
+
+  .text-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+  .text-roboto-mono {
+    font-family: 'Roboto Mono', monospace;
+  }
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.select-label > div {
+  min-width: 10rem;
+}
+.select-label > div > label {
+  color: white;
+  font-family: 'Squada One', sans-serif;
+}
+.select-label > div > button {
+  background: #151d28;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-label > div > button > span {
+  color: white;
+}
+.select-label > div > button > div > svg {
+  color: white;
+}

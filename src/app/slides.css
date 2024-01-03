@@ -1,0 +1,19 @@
+.slick-track,
+.slick-slide {
+  width: 100%;
+  min-height: 100% !important;
+  height: 100% !important;
+}
+
+.slick-track,
+.slick-slider.slick-initialized,
+.slick-slide.slick-active.slick-current,
+div.slick-slide.slick-active.slick-current > div,
+.slick-list {
+  width: 100%;
+  min-height: 100% !important;
+}
+.slick-slide.slick-cloned,
+.slick-slide div {
+  min-height: 100% !important;
+}

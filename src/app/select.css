@@ -1,0 +1,6 @@
+div.relative.w-full svg {
+  color: white !important;
+}
+div.relative.w-full > div[tabindex='0'] > div p {
+  font-family: 'Squada One', sans-serif;
+}
