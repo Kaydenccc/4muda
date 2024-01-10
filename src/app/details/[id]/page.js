@@ -8,7 +8,7 @@ import Map from "../../components/Map";
 import { useParams } from "next/navigation";
 import { properties } from "@/json/data";
 
-const page = () => {
+const DetailPage = () => {
   const { id } = useParams();
   const [thumbnail, setThumbnail] = useState(null);
 
@@ -313,4 +313,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default DetailPage;
