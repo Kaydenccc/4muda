@@ -71,7 +71,7 @@ export const properties = [
         height={640}
         allow="xr-spatial-tracking; gyroscope;
                 accelerometer"
-        allowFullScreen=""
+        allowFullScreen="true"
         src="https://kuula.co/share/collection/7Xw0t?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&al
                 pha=0.60"
       />
@@ -110,7 +110,7 @@ export const properties = [
         height={640}
         allow="xr-spatial-tracking; gyroscope;
           accelerometer"
-        allowFullScreen=""
+        allowFullScreen="true"
         src="https://kuula.co/share/collection/7XwGj?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&al
           pha=0.60"
       />
@@ -145,7 +145,7 @@ export const properties = [
         height={640}
         frameBorder={0}
         allow="xr-spatial-tracking; gyroscope; accelerometer"
-        allowFullScreen=""
+        allowFullScreen="true"
         scrolling="no"
         src="https://kuula.co/share/collection/7XwlX?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
       />
