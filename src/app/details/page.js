@@ -31,23 +31,41 @@ const page = () => {
         <div className="flex flex-col sm:flex-row sm:h-[30.438rem] md:h-[35.438rem] gap-4 md:gap-8 ">
           <div className="flex-1 h-full">
             <Card className="h-full">
-              <div style={{ width: 'calc(100%-30.438rem)', height: '100%' }} className="rounded-xl overflow-hidden">
-                <Image src={'/propertiImage1.jpg'} layout="fill" alt="thumbnail" className="object-cover !w-full !relative" />
+              <div style={{ width: 'calc(100%-30.438rem)', height: '100%' }} className="rounded-xl overflow-hidden ">
+                <Image src={'/marshmallow(athena)/1.jpg'} layout="fill" alt="thumbnail" className="object-cover !aspect-[4/3] !w-full !relative" />
               </div>
             </Card>
           </div>
           <div className="sm:w-[10.438rem] md:w-[18.438rem] overflow-x-auto sm:overflow-y-auto no-scrollbar h-full flex flex-row sm:flex-col gap-4 md:gap-8 pb-2 sm:pr-2">
             <Card className="shadow-md">
-              <CardProducDetail src={'/propertiImage1.jpg'} alt={'option 1'} />
+              <CardProducDetail src={'/marshmallow(athena)/1.jpg'} alt={'option 1'} />
             </Card>
             <Card className="shadow-md">
-              <CardProducDetail src={'/propertiImage1.jpg'} alt={'option 3'} />
+              <CardProducDetail src={'/marshmallow(athena)/2.jpg'} alt={'option 2'} />
             </Card>
             <Card className="shadow-md">
-              <CardProducDetail src={'/propertiImage1.jpg'} alt={'option 2'} />
+              <CardProducDetail src={'/marshmallow(athena)/3.jpg'} alt={'option 3'} />
+            </Card>
+            <Card className="shadow-md">
+              <CardProducDetail src={'/marshmallow(athena)/4.jpg'} alt={'option 4'} />
+            </Card>
+            <Card className="shadow-md">
+              <CardProducDetail src={'/marshmallow(athena)/5.jpg'} alt={'option 5'} />
+            </Card>
+            <Card className="shadow-md">
+              <CardProducDetail src={'/marshmallow(athena)/6.jpg'} alt={'option 6'} />
+            </Card>
+            <Card className="shadow-md">
+              <CardProducDetail src={'/marshmallow(athena)/7.jpg'} alt={'option 7'} />
+            </Card>
+            <Card className="shadow-md">
+              <CardProducDetail src={'/marshmallow(athena)/8.jpg'} alt={'option 8'} />
             </Card>
           </div>
         </div>
+      </div>
+      <div className='my-8'>
+      <iframe width="100%" height="640" frameBorder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowFullScreen scrolling="no" src="https://kuula.co/share/collection/7XwL5?logo=1&card=1&info=1&logosize=40&fs=1&vr=1&sd=1&thumbs=4&alpha=0.60"></iframe>
       </div>
       <div className="py-8">
         <div className="flex sm:gap-0 gap-4 justify-between items-center">
