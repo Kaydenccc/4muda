@@ -1,6 +1,6 @@
 'use client';
 import { Card, CardBody, CardHeader, Typography } from '@material-tailwind/react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import React from 'react';
 
 const page = () => {

@@ -1,10 +1,18 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/legacy/image";
+import React from "react";
 
-const CardProducDetail = ({ src, alt }) => {
+const CardProducDetail = ({ src, alt, setThumbnail }) => {
   return (
-    <button className="hover:bg-transparent !relative w-[10.063rem] sm:w-auto sm:h-[10.063rem] md:h-[12.063rem] p-0">
-      <Image src={src} alt={alt} fill className=" !w-full !h-full object-cover rounded-xl" />
+    <button
+      onClick={() => setThumbnail(src)}
+      className="hover:bg-transparent  w-[10.063rem] sm:w-auto sm:min-h-[10.063rem] md:min-h-[12.063rem] p-0"
+    >
+      <Image
+        src={src}
+        alt={alt}
+        layout="fill"
+        className="!relative !w-full !h-full object-cover rounded-xl"
+      />
     </button>
   );
 };
