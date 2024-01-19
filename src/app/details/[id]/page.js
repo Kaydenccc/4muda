@@ -91,7 +91,7 @@ const DetailPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="my-8">{e.vr}</div>
+              <div className="mt-8">{e.vr}</div>
               <div className="py-8">
                 <div className="flex sm:gap-0 gap-4 justify-between items-center">
                   <Typography
