@@ -267,7 +267,7 @@ export const properties = [
         allow="xr-spatial-tracking; gyroscope; accelerometer"
         allowFullScreen={true}
         scrolling="no"
-        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+        src="https://kuula.co/share/collection/7cKYX?logo=0&info=1&fs=1&vr=1&sd=1&thumbs=1"
       />
     ),
   },
@@ -303,7 +303,7 @@ export const properties = [
         allow="xr-spatial-tracking; gyroscope; accelerometer"
         allowFullScreen={true}
         scrolling="no"
-        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+        src="https://kuula.co/share/collection/7cK9l?logo=0&info=1&fs=1&vr=1&sd=1&thumbs=1"
       />
     ),
   },
@@ -339,7 +339,7 @@ export const properties = [
         allow="xr-spatial-tracking; gyroscope; accelerometer"
         allowFullScreen={true}
         scrolling="no"
-        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+        src="https://kuula.co/share/collection/7cKqn?logo=0&info=1&fs=1&vr=1&sd=1&thumbs=1"
       />
     ),
   },
@@ -374,7 +374,7 @@ export const properties = [
         allow="xr-spatial-tracking; gyroscope; accelerometer"
         allowFullScreen={true}
         scrolling="no"
-        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+        src="https://kuula.co/share/collection/7cKYn?logo=0&info=1&fs=1&vr=1&sd=1&thumbs=1"
       />
     ),
   },
@@ -410,7 +410,7 @@ export const properties = [
         allow="xr-spatial-tracking; gyroscope; accelerometer"
         allowFullScreen={true}
         scrolling="no"
-        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+        src="https://kuula.co/share/collection/7cKY3?logo=0&info=1&fs=1&vr=1&sd=1&thumbs=1"
       />
     ),
   },
@@ -446,7 +446,7 @@ export const properties = [
         allow="xr-spatial-tracking; gyroscope; accelerometer"
         allowFullScreen={true}
         scrolling="no"
-        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+        src="https://kuula.co/share/collection/7cKkf?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
       />
     ),
   },
