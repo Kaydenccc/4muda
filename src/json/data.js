@@ -315,8 +315,8 @@ export const properties = [
     desc: "Lorem ipsum dolor sit amet Consectetur adipiscing",
     harga: "500.000.000 - 1.500.000.000",
     almt: "SEMINYAK - OBEROI - AL121",
-    lt: 360,
     lb: 289,
+    lt: 360,
     kamar_tidur: "4+1",
     kamar_mandi: "5+1",
     img_thumnail: "/summerecon/1.png",
@@ -344,17 +344,52 @@ export const properties = [
     ),
   },
   {
+    id: 10,
+    type: "rumah",
+    nama: "SHINE 48/60",
+    desc: "Virginia Park Makassar",
+    harga: "592.553.896",
+    almt: "SEMINYAK - OBEROI - AL121",
+    lb: 60,
+    lt: 48,
+    kamar_tidur: "2",
+    kamar_mandi: "1",
+    img_thumnail: "/virginia/1.png",
+    images: [
+      "/virginia/1.png",
+      "/virginia/2.png",
+      "/virginia/3.png",
+      "/virginia/4.png",
+      "/virginia/5.png",
+    ],
+    carport: true,
+    lantai: 2,
+    ruang_makan: 1,
+    dapur: 1,
+    vr: (
+      <iframe
+        width="100%"
+        height={340}
+        frameBorder={0}
+        allow="xr-spatial-tracking; gyroscope; accelerometer"
+        allowFullScreen={true}
+        scrolling="no"
+        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+      />
+    ),
+  },
+  {
     id: 11,
     type: "rumah",
     nama: "BREEZE 37/60",
     tgl: "10 Januari 2024",
-    desc: "Lorem ipsum dolor sit amet Consectetur adipiscing",
-    harga: "500.000.000 - 1.500.000.000",
+    desc: "Virginia Park Makassar",
+    harga: "516.976.591",
     almt: "SEMINYAK - OBEROI - AL121",
-    lt: 360,
-    lb: 289,
-    kamar_tidur: "4+1",
-    kamar_mandi: "5+1",
+    lb: 37,
+    lt: 60,
+    kamar_tidur: "2",
+    kamar_mandi: "1",
     img_thumnail: "/virginia2/1.png",
     images: [
       "/virginia2/1.png",
@@ -364,7 +399,7 @@ export const properties = [
       "/virginia2/5.png",
     ],
     carport: true,
-    lantai: 2,
+    lantai: 1,
     ruang_makan: 1,
     dapur: 1,
     vr: (
@@ -384,13 +419,13 @@ export const properties = [
     type: "rumah",
     nama: "BLOSSOM 73/72",
     tgl: "10 Januari 2024",
-    desc: "Lorem ipsum dolor sit amet Consectetur adipiscing",
-    harga: "500.000.000 - 1.500.000.000",
+    desc: "Virginia Park Makassar",
+    harga: "862.561.331",
     almt: "SEMINYAK - OBEROI - AL121",
-    lt: 360,
-    lb: 289,
-    kamar_tidur: "4+1",
-    kamar_mandi: "5+1",
+    lb: 73,
+    lt: 72,
+    kamar_tidur: "3",
+    kamar_mandi: "2",
     img_thumnail: "/virginia3/1.png",
     images: [
       "/virginia3/1.png",

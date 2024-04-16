@@ -48,7 +48,7 @@ const page = () => {
                 variant="paragraph"
                 className="font-['Squada_One'] text-white"
               >
-                +62 823-9729-6289
+                0813 1216 4109
               </Typography>
             </span>
             <span className="flex gap-4 items-center ">
@@ -66,7 +66,7 @@ const page = () => {
                 variant="paragraph"
                 className="font-['Squada_One'] text-white"
               >
-                4mudaproperty@gmail.com
+                jqueenstarproperti@gmail.com
               </Typography>
             </span>
           </div>
