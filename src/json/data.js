@@ -198,4 +198,47 @@ export const properties = [
       />
     ),
   },
+  {
+    id: 6,
+    type: "rumah",
+    nama: "DATA DUMMY",
+    tgl: "10 Januari 2024",
+    desc: "Lorem ipsum dolor sit amet Consectetur adipiscing",
+    harga: "6,810,300,000",
+    almt: "SEMINYAK - OBEROI - AL121",
+    lt: 360,
+    lb: 289,
+    kamar_tidur: "4+1",
+    kamar_mandi: "5+1",
+    img_thumnail: "/lavish/1l.png",
+    images: [
+      "/lavish/1l.png",
+      "/lavish/2l.jpg",
+      "/lavish/3l.jpg",
+      "/lavish/4l.jpg",
+      "/lavish/5l.jpg",
+      "/lavish/6l.jpg",
+      "/lavish/7l.jpg",
+      "/lavish/8l.jpg",
+      "/lavish/9l.jpg",
+      "/lavish/10l.jpg",
+      "/lavish/11l.jpg",
+      "/lavish/12l.jpg",
+    ],
+    carport: true,
+    lantai: 2,
+    ruang_makan: 1,
+    dapur: 1,
+    vr: (
+      <iframe
+        width="100%"
+        height={340}
+        frameBorder={0}
+        allow="xr-spatial-tracking; gyroscope; accelerometer"
+        allowFullScreen={true}
+        scrolling="no"
+        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+      />
+    ),
+  },
 ];
