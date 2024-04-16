@@ -155,6 +155,7 @@ export const properties = [
       />
     ),
   },
+  //bdatabase kk
   {
     id: 5,
     type: "rumah",
@@ -204,26 +205,199 @@ export const properties = [
     nama: "DATA DUMMY",
     tgl: "10 Januari 2024",
     desc: "Lorem ipsum dolor sit amet Consectetur adipiscing",
-    harga: "6,810,300,000",
+    harga: "500.000.000 - 1.500.000.000",
     almt: "SEMINYAK - OBEROI - AL121",
     lt: 360,
     lb: 289,
     kamar_tidur: "4+1",
     kamar_mandi: "5+1",
-    img_thumnail: "/lavish/1l.png",
+    img_thumnail: "/tallasacity/1.png",
     images: [
-      "/lavish/1l.png",
-      "/lavish/2l.jpg",
-      "/lavish/3l.jpg",
-      "/lavish/4l.jpg",
-      "/lavish/5l.jpg",
-      "/lavish/6l.jpg",
-      "/lavish/7l.jpg",
-      "/lavish/8l.jpg",
-      "/lavish/9l.jpg",
-      "/lavish/10l.jpg",
-      "/lavish/11l.jpg",
-      "/lavish/12l.jpg",
+      "/tallasacity/1.png",
+      "/tallasacity/2.png",
+      "/tallasacity/3.png",
+      "/tallasacity/4.png",
+      "/tallasacity/5.png",
+    ],
+    carport: true,
+    lantai: 2,
+    ruang_makan: 1,
+    dapur: 1,
+    vr: (
+      <iframe
+        width="100%"
+        height={340}
+        frameBorder={0}
+        allow="xr-spatial-tracking; gyroscope; accelerometer"
+        allowFullScreen={true}
+        scrolling="no"
+        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+      />
+    ),
+  },
+  {
+    id: 7,
+    type: "rumah",
+    nama: "DATA DUMMY",
+    tgl: "10 Januari 2024",
+    desc: "Lorem ipsum dolor sit amet Consectetur adipiscing",
+    harga: "500.000.000 - 1.500.000.000",
+    almt: "SEMINYAK - OBEROI - AL121",
+    lt: 360,
+    lb: 289,
+    kamar_tidur: "4+1",
+    kamar_mandi: "5+1",
+    img_thumnail: "/tallasacity2/1.png",
+    images: [
+      "/tallasacity2/1.png",
+      "/tallasacity2/2.png",
+      "/tallasacity2/3.png",
+      "/tallasacity2/4.png",
+      "/tallasacity2/5.png",
+    ],
+    carport: true,
+    lantai: 2,
+    ruang_makan: 1,
+    dapur: 1,
+    vr: (
+      <iframe
+        width="100%"
+        height={340}
+        frameBorder={0}
+        allow="xr-spatial-tracking; gyroscope; accelerometer"
+        allowFullScreen={true}
+        scrolling="no"
+        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+      />
+    ),
+  },
+  {
+    id: 9,
+    type: "rumah",
+    nama: "DATA DUMMY",
+    tgl: "10 Januari 2024",
+    desc: "Lorem ipsum dolor sit amet Consectetur adipiscing",
+    harga: "500.000.000 - 1.500.000.000",
+    almt: "SEMINYAK - OBEROI - AL121",
+    lt: 360,
+    lb: 289,
+    kamar_tidur: "4+1",
+    kamar_mandi: "5+1",
+    img_thumnail: "/summerecon2/1.png",
+    images: [
+      "/summerecon2/1.png",
+      "/summerecon2/2.png",
+      "/summerecon2/3.png",
+      "/summerecon2/4.png",
+      "/summerecon2/5.png",
+    ],
+    carport: true,
+    lantai: 2,
+    ruang_makan: 1,
+    dapur: 1,
+    vr: (
+      <iframe
+        width="100%"
+        height={340}
+        frameBorder={0}
+        allow="xr-spatial-tracking; gyroscope; accelerometer"
+        allowFullScreen={true}
+        scrolling="no"
+        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+      />
+    ),
+  },
+  {
+    id: 8,
+    type: "rumah",
+    nama: "DATA DUMMY",
+    tgl: "10 Januari 2024",
+    desc: "Lorem ipsum dolor sit amet Consectetur adipiscing",
+    harga: "500.000.000 - 1.500.000.000",
+    almt: "SEMINYAK - OBEROI - AL121",
+    lt: 360,
+    lb: 289,
+    kamar_tidur: "4+1",
+    kamar_mandi: "5+1",
+    img_thumnail: "/summerecon/1.png",
+    images: [
+      "/summerecon/1.png",
+      "/summerecon/2.png",
+      "/summerecon/3.png",
+      "/summerecon/4.png",
+      "/summerecon/5.png",
+    ],
+    carport: true,
+    lantai: 2,
+    ruang_makan: 1,
+    dapur: 1,
+    vr: (
+      <iframe
+        width="100%"
+        height={340}
+        frameBorder={0}
+        allow="xr-spatial-tracking; gyroscope; accelerometer"
+        allowFullScreen={true}
+        scrolling="no"
+        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+      />
+    ),
+  },
+  {
+    id: 11,
+    type: "rumah",
+    nama: "BREEZE 37/60",
+    tgl: "10 Januari 2024",
+    desc: "Lorem ipsum dolor sit amet Consectetur adipiscing",
+    harga: "500.000.000 - 1.500.000.000",
+    almt: "SEMINYAK - OBEROI - AL121",
+    lt: 360,
+    lb: 289,
+    kamar_tidur: "4+1",
+    kamar_mandi: "5+1",
+    img_thumnail: "/virginia2/1.png",
+    images: [
+      "/virginia2/1.png",
+      "/virginia2/2.png",
+      "/virginia2/3.png",
+      "/virginia2/4.png",
+      "/virginia2/5.png",
+    ],
+    carport: true,
+    lantai: 2,
+    ruang_makan: 1,
+    dapur: 1,
+    vr: (
+      <iframe
+        width="100%"
+        height={340}
+        frameBorder={0}
+        allow="xr-spatial-tracking; gyroscope; accelerometer"
+        allowFullScreen={true}
+        scrolling="no"
+        src="https://kuula.co/share/collection/7cKYm?logo=1&info=1&fs=1&vr=1&sd=1&gyro=0&thumbs=4&alpha=0.60"
+      />
+    ),
+  },
+  {
+    id: 12,
+    type: "rumah",
+    nama: "BLOSSOM 73/72",
+    tgl: "10 Januari 2024",
+    desc: "Lorem ipsum dolor sit amet Consectetur adipiscing",
+    harga: "500.000.000 - 1.500.000.000",
+    almt: "SEMINYAK - OBEROI - AL121",
+    lt: 360,
+    lb: 289,
+    kamar_tidur: "4+1",
+    kamar_mandi: "5+1",
+    img_thumnail: "/virginia3/1.png",
+    images: [
+      "/virginia3/1.png",
+      "/virginia3/2.png",
+      "/virginia3/3.png",
+      "/virginia3/4.png",
+      "/virginia3/5.png",
     ],
     carport: true,
     lantai: 2,
