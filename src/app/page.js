@@ -85,7 +85,7 @@ export default function Home() {
               className="my-3 w-full md:w-[30rem] leading-[2] sm:leading-[2.5] text-base sm:text-lg text-white/70"
             >
               Kami membuka jasa jual beli maupun rental properti dengan harga
-              terjangkau. Kami sudah beroperasi selama 3 tahun.
+              terjangkau.
             </Typography>
             <form className="w-full bg-white rounded-xl flex flex-col  p-2 gap-2 justify-center items-start ">
               <div className="flex flex-row justify-between w-full">
@@ -119,9 +119,9 @@ export default function Home() {
                     ripple={true}
                   />
                 </div>
-                <div className="w-fit flex justify-center gap-2 items-center">
-                  <button className="!max-w-fit h-[40px]  md:bg-transparent">
-                    <Search className="w-6 h-6" />
+                <div className="w-fit flex justify-center gap-2 items-center bg-[#151D28] px-4 mx-4 rounded-lg">
+                  <button className="!max-w-fit  h-[40px] text-white font-medium md:bg-transparent text-center">
+                    CARI
                   </button>
                 </div>
               </div>

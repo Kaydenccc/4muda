@@ -32,7 +32,7 @@ export function Sidebar() {
       </div>
       <div>
         <Typography variant="h5" className="text-[#151D28] font-['Squada_One']">
-          Group
+          Kompleks
         </Typography>
         <SelectButtonFilter />
       </div>
@@ -44,7 +44,7 @@ export function Sidebar() {
           variant="h6"
           className="text-white font-['Squada_One'] font-normal p-2"
         >
-          Katagori
+          Kategori
         </Typography>
         <Checkbox
           className="!bg-white"
@@ -104,26 +104,16 @@ export function Sidebar() {
         >
           Harga
         </Typography>
-        <div className=" p-2">
-          <div className="h-8 flex m-0 p-0 mb-4  overflow-hidden w-full bg-[#D9D9D9] rounded justify-between items-center">
-            <div className="w-9 px-2 h-full bg-white flex justify-center items-center">
-              Rp
-            </div>
-            <input
-              type="text"
-              placeholder="Harga Minimum"
-              className="focus:border-none w-full py-[4px] p-2 focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent"
-            />
+        <div className="p-2">
+          <div className="h-8 flex m-0 p-0 mb-2 overflow-hidden w-full bg-[#D9D9D9] rounded justify-between items-center">
+            <Button className="focus:border-none w-full py-[4px] p-2  focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent">
+              Harga Termahal
+            </Button>
           </div>
           <div className="h-8 flex m-0 p-0  overflow-hidden w-full bg-[#D9D9D9] rounded justify-between items-center">
-            <div className="w-9 px-2 h-full bg-white flex justify-center items-center">
-              Rp
-            </div>
-            <input
-              type="text"
-              placeholder="Harga Maximum"
-              className="focus:border-none w-full py-[4px] p-2 focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent"
-            />
+            <Button className="focus:border-none w-full py-[4px] p-2 focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent">
+              Harga Termurah
+            </Button>
           </div>
         </div>
       </div>

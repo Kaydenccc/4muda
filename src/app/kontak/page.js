@@ -6,6 +6,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import Image from "next/legacy/image";
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
@@ -34,22 +35,29 @@ const page = () => {
           </Typography>
           <div>
             <span className="flex gap-4 items-center my-4">
-              <div style={{ width: "30px" }}>
-                <Image
-                  src="/whatsapp.svg"
-                  alt="Icon whatsapp"
-                  height={30}
-                  width={30}
-                  style={{ width: "auto", height: "auto" }}
-                  className="rounded-full"
-                />
-              </div>
-              <Typography
-                variant="paragraph"
-                className="font-['Squada_One'] text-white"
+              <Link
+                href={
+                  ' https://wa.me/082397296289?text="Halo,%20JQueen%20Properti"'
+                }
+                className="flex gap-4 hover:underline hover:text-blue-300"
               >
-                0813 1216 4109
-              </Typography>
+                <div style={{ width: "30px" }}>
+                  <Image
+                    src="/whatsapp.svg"
+                    alt="Icon whatsapp"
+                    height={30}
+                    width={30}
+                    style={{ width: "auto", height: "auto" }}
+                    className="rounded-full"
+                  />
+                </div>
+                <Typography
+                  variant="paragraph"
+                  className="font-['Squada_One'] text-white"
+                >
+                  082 397 296 289
+                </Typography>
+              </Link>
             </span>
             <span className="flex gap-4 items-center ">
               <div style={{ width: "30px" }}>

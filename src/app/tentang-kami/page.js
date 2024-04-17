@@ -2,6 +2,7 @@
 import { Card, CardBody, Typography } from "@material-tailwind/react";
 import Image from "next/legacy/image";
 import React from "react";
+import { DefaultGallery } from "../components/Gallery";
 
 const page = () => {
   return (
@@ -17,16 +18,87 @@ const page = () => {
           variant="paragraph"
           className="text-justify leading-[3] text-roboto-mono"
         >
-          4Muda agen properti yang telah beroperasi selama satu tahun, adalah
-          mitra terpercaya untuk kebutuhan pembelian properti Anda. Dengan
-          dedikasi tinggi dan pengalaman yang solid, 4Muda memahami betul pasar
-          properti lokal dan tren terkini. 4Muda tidak hanya menjual properti,
-          tetapi juga menciptakan pengalaman penjualan yang mulus dan transparan
-          bagi klien mereka. Dengan pengetahuan yang mendalam tentang nilai
-          properti dan kemampuan untuk menyajikan informasi dengan jelas, 4Muda
-          memastikan bahwa proses penjualan rumah Anda berjalan dengan lancar.
-          Sebagai agen properti terpercaya kami menyediakan 4 jenis properti
-          yang bisa kamu dapat dengan harga terjangkau.
+          Selamat datang di JQueen Star Property, agensi properti terkemuka kami
+          yang berbasis di Makassar sejak 2022. Di JQueen Star, kami
+          menggabungkan keahlian lokal dengan pengalaman yang luas untuk
+          menawarkan layanan yang tidak pernah terlampaui di pasar properti.
+        </Typography>
+        <Typography
+          variant="paragraph"
+          className="text-justify leading-[3] text-roboto-mono my-4 font-semibold"
+        >
+          Mengapa Memilih JQueen Star Property?
+        </Typography>
+        <ol className="list-decimal space-y-4 pl-8">
+          <li>
+            {" "}
+            <Typography
+              variant="paragraph"
+              className="text-justify leading-[3] text-roboto-mono"
+            >
+              Akar Lokal Mendalam: Didirikan di Makassar, kami memiliki
+              pemahaman yang mendalam tentang lanskap properti lokal, memastikan
+              bahwa Anda mendapatkan wawasan dan strategi properti yang paling
+              akurat dan strategis.
+            </Typography>
+          </li>
+          <li>
+            {" "}
+            <Typography
+              variant="paragraph"
+              className="text-justify leading-[3] text-roboto-mono"
+            >
+              Kepemimpinan yang Berpengalaman: Direktur kami telah menjadi
+              bagian dinamis dari industri properti sejak 2009, membawa lebih
+              dari satu dekade keahlian dan rekam jejak sukses yang
+              menginspirasi kepercayaan dan kepercayaan.
+            </Typography>
+          </li>
+          <li>
+            <Typography
+              variant="paragraph"
+              className="text-justify leading-[3] text-roboto-mono"
+            >
+              Pendekatan yang Berpusat pada Klien: Di JQueen Star, kami
+              menetapkan kebutuhan dan tujuan Anda. Apakah Anda membeli rumah
+              pertama Anda, mencari properti investasi yang menguntungkan, atau
+              menjual rumah yang dicintai, kami menyesuaikan layanan kami untuk
+              memenuhi kebutuhan unik Anda.
+            </Typography>
+          </li>
+          <li>
+            <Typography
+              variant="paragraph"
+              className="text-justify leading-[3] text-roboto-mono"
+            >
+              Layanan Komprehensif: Dari penjualan dan pembelian properti hingga
+              sewa dan manajemen, kami menawarkan spektrum penuh layanan real
+              estat untuk memastikan bahwa semua kebutuhan Anda dikelola secara
+              profesional di bawah satu atap.
+            </Typography>
+          </li>
+          <li>
+            {" "}
+            <Typography
+              variant="paragraph"
+              className="text-justify leading-[3] text-roboto-mono"
+            >
+              Komitmen Kami terhadap Kualitas Tinggi: Kami berkomitmen untuk
+              memberikan Anda layanan yang luar biasa dan nasihat yang dapat
+              dipercaya, membimbing Anda melalui setiap langkah perjalanan
+              properti Anda. Tim kami berdedikasi untuk memastikan bahwa setiap
+              transaksi secepat dan sukses mungkin, memanfaatkan pengetahuan dan
+              sumber daya kami yang luas untuk menguntungkan Anda.
+            </Typography>
+          </li>
+        </ol>
+
+        <Typography
+          variant="paragraph"
+          className="text-justify leading-[3] text-roboto-mono mt-4 font-semibold"
+        >
+          Hubungi Kami Jelajahi bagaimana JQueen Star Property dapat membuat
+          impian properti Anda menjadi realitas
         </Typography>
         <div className="flex justify-center items-center gap-8 mt-8">
           <div
@@ -132,87 +204,22 @@ const page = () => {
           variant="h1"
           className="text-center font-['Squada_One'] font-light mb-4 text-4xl md:text-5xl"
         >
-          Apa Kata Mereka
+          Prestasi
         </Typography>
         <Typography
           variant="paragraph"
-          className="text-justify leading-[3] text-roboto-mono"
+          className="text-justify leading-[3] text-roboto-mono pb-8"
         >
-          Keberhasilan 4Muda selama setahun beroperasi tidak hanya didukung oleh
-          keahlian timnya, tetapi juga oleh jaringan yang luas dalam industri
-          properti. Hal ini memungkinkan kami untuk mencapai target penjualan
-          dengan efektif dan memberikan nilai tambah kepada klien. Dengan fokus
-          pada profesionalisme, integritas, dan pelayanan pelanggan yang unggul,
-          4Muda siap membantu Anda mencapai kesuksesan dalam membeli properti
-          impian Anda. Dengan satu tahun pengalaman yang sukses, 4Muda merupakan
-          pilihan terbaik untuk membeli properti dengan aman dan nyaman.
+          Keberhasilan Jqueen Star Properti tidak hanya didukung oleh keahlian
+          timnya, tetapi juga oleh jaringan yang luas dalam industri properti.
+          Hal ini memungkinkan kami untuk mencapai target penjualan dengan
+          efektif dan memberikan nilai tambah kepada klien. Dengan fokus pada
+          profesionalisme, integritas, dan pelayanan pelanggan yang unggul,
+          Jqueen Star Properti siap membantu Anda mencapai kesuksesan dalam
+          membeli properti impian Anda. Jqueen Star Properti merupakan pilihan
+          terbaik untuk membeli properti dengan aman dan nyaman.
         </Typography>
-        <div className="flex flex-col md:flex-row gap-4 md:gap-8 my-8 justify-center items-center">
-          <Card className="bg-[#151D28] w-full md:max-w-[22.25rem] flex flex-col justify-center items-center  shadow-none p-4 py-8">
-            <div
-              style={{ width: "100%" }}
-              className=" !w-40 md:!w-full overflow-hidden flex  justify-center"
-            >
-              <Image
-                src="/kontakimage.jpg"
-                alt="Image contact"
-                height={160}
-                width={160}
-                style={{ width: "auto", height: "auto" }}
-                className="rounded-full"
-              />
-            </div>
-            <CardBody className="p-2 md:p-6">
-              <Typography
-                variant="lead"
-                className="font-['Squada_One'] mb-4 text-center text-white"
-              >
-                Raffi Ahmad
-              </Typography>
-              <Typography
-                variant="paragraph"
-                className="!text-roboto-mono text-justify text-white"
-              >
-                Saya sangat bersyukur memilih 4Muda sebagai mitra dalam
-                pembelian properti saya. Pelayanan mereka luar biasa,
-                profesionalisme tinggi, dan mereka benar-benar memahami
-                kebutuhan saya. Pembelian properti tidak pernah semudah ini!
-              </Typography>
-            </CardBody>
-          </Card>
-          <Card className="bg-[#151D28] max-w-[22.25rem] flex flex-col justify-center items-center  shadow-none p-4 py-8">
-            <div
-              style={{ width: "100%" }}
-              className=" !w-40 md:!w-full overflow-hidden flex  justify-center"
-            >
-              <Image
-                src="/kontakimage.jpg"
-                alt="Image contact"
-                height={160}
-                width={160}
-                style={{ width: "auto", height: "auto" }}
-                className="rounded-full"
-              />
-            </div>
-            <CardBody className="p-2 md:p-6">
-              <Typography
-                variant="lead"
-                className="font-['Squada_One'] mb-4 text-center text-white"
-              >
-                Horas
-              </Typography>
-              <Typography
-                variant="paragraph"
-                className="!text-roboto-mono text-justify text-white"
-              >
-                4Muda bukan hanya agen properti biasa. Mereka adalah mitra
-                terpercaya yang memberikan panduan dan saran berharga sepanjang
-                perjalanan pembelian properti saya. Prosesnya lancar, dan
-                hasilnya melebihi ekspektasi saya.
-              </Typography>
-            </CardBody>
-          </Card>
-        </div>
+        <DefaultGallery />
       </div>
     </div>
   );

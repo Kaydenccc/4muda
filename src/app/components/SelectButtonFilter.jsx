@@ -3,10 +3,15 @@ import React, { useState } from "react";
 import Select from "react-tailwindcss-select";
 import "../select.css";
 const options = [
-  { value: "", label: "Tipe Group" },
-  { value: "fox", label: "🦊 Fox" },
-  { value: "Butterfly", label: "🦋 Butterfly" },
-  { value: "Honeybee", label: "🐝 Honeybee" },
+  // { value: "", label: "Nama Kompleks" },
+  { value: "Tanjung Bunga", label: "Tanjung Bunga" },
+  {
+    value: "Summerecon Mutiara Makassar",
+    label: "Summerecon Mutiara Makassar",
+  },
+  { value: "Virginia Park Makassar", label: "🐝 Virginia Park Makassar" },
+  { value: "Citra Land Celebes", label: "🐝 Citra Land Celebes" },
+  { value: "Tallasa City Makassar", label: "🐝 Tallasa City Makassar" },
 ];
 const SelectButtonFilter = () => {
   const [animal, setAnimal] = useState(null);
@@ -31,7 +36,7 @@ const SelectButtonFilter = () => {
               isSelected && "bg-[#151d28] !text-white"
             }`,
         }}
-        placeholder="Tipe Group"
+        placeholder="Nama Kompleks"
         value={animal}
         onChange={handleChange}
         options={options}
