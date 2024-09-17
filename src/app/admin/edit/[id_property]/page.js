@@ -248,7 +248,7 @@ export default function EditForm() {
                 ) : (
                   properti?.images.length >= 0 &&
                   properti?.images.map(({ id, properti_id, file_path }) => (
-                    <Card className="relative">
+                    <Card className="relative" key={id}>
                       <button
                         onClick={() => deletedImages(id)}
                         className="bg-white rounded-full absolute -top-2 -right-2 hover:scale-125"

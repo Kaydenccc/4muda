@@ -206,7 +206,7 @@ export default function Home() {
               {properties?.length >= 0 && (
                 <Slider {...settings}>
                   {properties?.map((properti, index) => (
-                    <BlogCard properti={properti} />
+                    <BlogCard properti={properti} key={index} />
                   ))}
                 </Slider>
               )}

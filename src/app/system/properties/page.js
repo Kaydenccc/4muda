@@ -9,7 +9,7 @@ import IconProductDes from "@/app/components/IconProductDes";
 import { properties } from "@/json/data";
 import Axios from "@/axios/axios";
 
-const page = ({ searchParams }) => {
+const PropertiesPage = ({ searchParams }) => {
   console.log(searchParams);
   const [propertiesData, setDataProperties] = useState(properties);
 
@@ -87,4 +87,4 @@ const page = ({ searchParams }) => {
   );
 };
 
-export default page;
+export default PropertiesPage;
