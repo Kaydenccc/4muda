@@ -1,8 +1,8 @@
 const IconProductDes = ({ meter, lantai, img, alt }) => {
   return (
-    <p className="flex gap-4 items-center">
+    <div className="flex gap-4 items-center">
       <img src={img} alt={alt} />
-      <span>
+      <span className="text-sm">
         {lantai ? (
           <>
             {lantai}
@@ -14,7 +14,7 @@ const IconProductDes = ({ meter, lantai, img, alt }) => {
           </>
         )}
       </span>
-    </p>
+    </div>
   );
 };
 

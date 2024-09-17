@@ -3,8 +3,54 @@
 import { Card, Button, Typography, Checkbox } from "@material-tailwind/react";
 import SelectButtonFilter from "./SelectButtonFilter";
 import "../checkbox.css";
+import { useEffect, useState } from "react";
+import { properties } from "@/json/data";
 
-export function Sidebar() {
+export function Sidebar({ setDataProperties, propertiesData }) {
+  const [filter, setFilter] = useState([]);
+  const [filterBekas, setFilterBekas] = useState([]);
+
+  const cekFilter = (parms) => {
+    if (filter.includes(parms)) {
+      setFilter(filter.filter((element) => element !== parms));
+    } else {
+      setFilter([...filter, parms]);
+    }
+  };
+
+  const cekFilterBekas = (parms) => {
+    if (filterBekas.includes(parms)) {
+      setFilterBekas(filterBekas.filter((element) => element !== parms));
+    } else {
+      setFilterBekas([...filterBekas, parms]);
+    }
+  };
+
+  useEffect(() => {
+    setDataProperties(
+      properties?.filter((value) => filter.includes(value.type))
+    );
+  }, [filter]);
+
+  function parseHarga(harga) {
+    const hargaConvers = Number(harga?.split(",").join(""));
+    return hargaConvers;
+  }
+
+  // lanjutan nanti untuk filter bekas dan baru
+  const hargaTermahal = () => {
+    const sortedProperties = properties.sort(
+      (a, b) => parseHarga(b.harga) - parseHarga(a.harga)
+    );
+    setDataProperties([...sortedProperties]);
+  };
+  const hargaTermurah = () => {
+    const sortedProperties = properties.sort(
+      (a, b) => parseHarga(a.harga) - parseHarga(b.harga)
+    );
+    setDataProperties([...sortedProperties]);
+  };
+  console.log(propertiesData);
   return (
     <Card className="h-[calc(100vh-10rem)] shadow-none w-full max-w-full md:max-w-[18rem] py-4 pr-0 md:pr-8 font-['Squada_One']">
       <div className="mb-2 pt-4 w-full">
@@ -30,12 +76,12 @@ export function Sidebar() {
           </Button>
         </div>
       </div>
-      <div>
+      {/* <div>
         <Typography variant="h5" className="text-[#151D28] font-['Squada_One']">
           Kompleks
         </Typography>
         <SelectButtonFilter />
-      </div>
+      </div> */}
       <Typography variant="h5" className="text-[#151D28] font-['Squada_One']">
         Filter
       </Typography>
@@ -51,28 +97,36 @@ export function Sidebar() {
           labelProps={{ className: "text-white" }}
           id="ripple-on"
           label="Rumah"
+          value="Rumah"
           ripple={true}
+          onChange={(e) => cekFilter(e.target.value)}
         />
         <Checkbox
           className="!bg-white"
           labelProps={{ className: "text-white" }}
           id="Apartemen"
           label="Apartemen"
+          value="Apartemen"
           ripple={true}
+          onChange={(e) => cekFilter(e.target.value)}
         />
         <Checkbox
           className="!bg-white"
           labelProps={{ className: "text-white" }}
           id="Tanah/Lahan"
           label="Tanah/Lahan"
+          value="Tanah/Lahan"
           ripple={true}
+          onChange={(e) => cekFilter(e.target.value)}
         />
         <Checkbox
           className="!bg-white"
           labelProps={{ className: "text-white" }}
           id="Ruko"
           label="Ruko"
+          value="Ruko"
           ripple={true}
+          onChange={(e) => cekFilter(e.target.value)}
         />
       </div>
       <div className="bg-[#151D28] my-[1px]  filter">
@@ -87,14 +141,18 @@ export function Sidebar() {
           labelProps={{ className: "text-white" }}
           id="ripple-on"
           label="Baru"
+          value="Baru"
           ripple={true}
+          onChange={(e) => cekFilterBekas(e.target.value)}
         />
         <Checkbox
           className="!bg-white"
           labelProps={{ className: "text-white" }}
           id="Bekas"
           label="Bekas"
+          value="Bekas"
           ripple={true}
+          onChange={(e) => cekFilterBekas(e.target.value)}
         />
       </div>
       <div className="bg-[#151D28] rounded-b pb-2 filter">
@@ -106,12 +164,18 @@ export function Sidebar() {
         </Typography>
         <div className="p-2">
           <div className="h-8 flex m-0 p-0 mb-2 overflow-hidden w-full bg-[#D9D9D9] rounded justify-between items-center">
-            <Button className="focus:border-none w-full py-[4px] p-2  focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent">
+            <Button
+              onClick={hargaTermahal}
+              className="focus:border-none w-full py-[4px] p-2  focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent"
+            >
               Harga Termahal
             </Button>
           </div>
           <div className="h-8 flex m-0 p-0  overflow-hidden w-full bg-[#D9D9D9] rounded justify-between items-center">
-            <Button className="focus:border-none w-full py-[4px] p-2 focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent">
+            <Button
+              onClick={hargaTermurah}
+              className="focus:border-none w-full py-[4px] p-2 focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent"
+            >
               Harga Termurah
             </Button>
           </div>

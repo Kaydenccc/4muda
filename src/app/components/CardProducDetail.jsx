@@ -10,6 +10,9 @@ const CardProducDetail = ({ src, alt, setThumbnail }) => {
       <Image
         src={src}
         alt={alt}
+        style={{
+          aspectRatio: 4 / 3,
+        }}
         layout="fill"
         className="!relative !w-full !h-full object-cover rounded-xl"
       />

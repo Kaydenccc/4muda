@@ -2,15 +2,32 @@
 import { Button, Card, Chip, Typography } from "@material-tailwind/react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import CardProducDetail from "../../components/CardProducDetail";
-import Map from "../../components/Map";
+import React, { useEffect, useState } from "react";
+import CardProducDetail from "../../../components/CardProducDetail";
+import Map from "../../../components/Map";
 import { useParams } from "next/navigation";
 import { properties } from "@/json/data";
+import Axios from "@/axios/axios";
 
 const DetailPage = () => {
   const { id } = useParams();
   const [thumbnail, setThumbnail] = useState(null);
+  const [properti, setProperti] = useState(null);
+
+  const getProperty = async () => {
+    try {
+      const res = await Axios.get(`/property/${id}`);
+      //   console.log(res.data?.data);
+      setProperti(res.data?.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    getProperty();
+  }, []);
+
+  console.log(properti);
 
   return (
     <section className="p-4 md:px-[6.5rem] font-['Squada_One']">
@@ -29,13 +46,16 @@ const DetailPage = () => {
             />
           </div>
           <Link
-            href="/properties"
-            className="font-['Squada_One'] capitalize text-base"
+            href="/"
+            className="font-['Squada_One'] text-[#D1AE6C] capitalize text-base"
           >
             Kembali Ke Properti
           </Link>
         </Button>
         <span className="flex items-center gap-2">
+          <span className="text-[#D1AE6C]">
+            {properti?.baru ? "Baru" : "Bekas"}
+          </span>
           <div style={{ width: "12px" }}>
             <Image
               src="/official.svg"
@@ -49,7 +69,7 @@ const DetailPage = () => {
             variant="lead"
             className="font-['Squada_One'] sm:text-xl text-sm"
           >
-            Bangunan bersertifikat HGB
+            {properti?.sertifikat}
           </Typography>
         </span>
       </div>
@@ -65,25 +85,29 @@ const DetailPage = () => {
                         style={{
                           width: "calc(100%-30.438rem)",
                           height: "100%",
+                          aspectRatio: 4 / 3,
                         }}
                         className="rounded-xl overflow-hidden !relative"
                       >
                         <Image
-                          src={!thumbnail ? e.img_thumnail : thumbnail}
+                          src={thumbnail ? thumbnail : properti?.thumbnail}
+                          style={{
+                            aspectRatio: 4 / 3,
+                          }}
                           layout="fill"
                           alt="thumbnail"
-                          className="object-cover !aspect-[4/3] !w-full !relative"
+                          className="object-cover !w-full !relative"
                         />
                       </div>
                     </Card>
                   </div>
                   <div className="sm:w-[10.438rem] md:w-[18.438rem] overflow-x-auto sm:overflow-y-auto no-scrollbar h-[9.5rem] sm:h-full flex flex-row sm:flex-col gap-4 md:gap-8 pb-2 sm:pr-2">
-                    {e.images.length > 0 &&
-                      e.images.map((x) => (
-                        <Card className="shadow-md" key={x}>
+                    {properti?.images.length > 0 &&
+                      properti?.images.map(({ id, file_path }) => (
+                        <Card className="shadow-md" key={id}>
                           <CardProducDetail
-                            src={x}
-                            alt={x}
+                            src={file_path}
+                            alt={properti?.nama}
                             setThumbnail={setThumbnail}
                           />
                         </Card>
@@ -91,19 +115,29 @@ const DetailPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-8">{e.vr}</div>
+              <div className="mt-8">
+                <iframe
+                  width="100%"
+                  height={340}
+                  frameBorder={0}
+                  allow="xr-spatial-tracking; gyroscope; accelerometer"
+                  allowFullScreen={true}
+                  scrolling="no"
+                  src={properti?.vr}
+                />
+              </div>
               <div className="py-8">
                 <div className="flex sm:gap-0 gap-4 justify-between items-center">
                   <Typography
                     variant="h2"
-                    className="font-['Squada_One'] text-xl md:text-4xl sm:text-3xl"
+                    className="font-['Squada_One'] text-[#D1AE6C] text-xl md:text-4xl sm:text-3xl"
                   >
-                    {e.nama}
+                    {properti?.nama}
                   </Typography>
                   <Chip
-                    value={`IDR ${e.harga}`}
+                    value={`IDR ${properti?.harga}`}
                     size="lg"
-                    className="w-fit text-base sm:text-xl md:text-3xl font-['Squada_One'] font-normal"
+                    className="w-fit bg-[#D1AE6C] text-base sm:text-xl md:text-3xl font-['Squada_One'] font-normal"
                   />
                 </div>
                 <span className="flex items-center my-4">
@@ -112,14 +146,14 @@ const DetailPage = () => {
                     variant="h4"
                     className="text-roboto ml-2 text-base md:text-2xl sm:text-xl"
                   >
-                    {e.almt}
+                    {properti?.alamat}
                   </Typography>
                 </span>
                 <div className="text-roboto flex md:flex-row flex-col gap-4 md:gap-8">
                   <div className="bg-[#151D28] rounded-lg p-4">
                     <Typography
                       variant="lead"
-                      className="text-roboto text-base md:text-xl ml-2 mb-4 text-white bg-[#151D28] font-medium"
+                      className="text-roboto text-base md:text-xl ml-2 mb-4 text-white  font-medium"
                     >
                       Spesifikasi bangunan:
                     </Typography>
@@ -129,26 +163,26 @@ const DetailPage = () => {
                           variant="lead"
                           className="text-roboto text-base md:text-xl ml-2 text-white/80 bg-[#151D28]"
                         >
-                          {e.kamar_mandi} Kamar mandi
+                          {properti?.jumlah_kamar_mandi} Kamar mandi
                         </Typography>
                         <Typography
                           variant="lead"
                           className="text-roboto text-base md:text-xl ml-2 text-white/80 bg-[#151D28]"
                         >
-                          {e.kamar_tidur} Kamar tidur
+                          {properti?.jumlah_kamar_tidur} Kamar tidur
                         </Typography>
                         <Typography
                           variant="lead"
                           className="text-roboto text-base md:text-xl ml-2 text-white/80 bg-[#151D28]"
                         >
-                          {e.dapur} Dapur
+                          {properti?.jumlah_dapur} Dapur
                         </Typography>
 
                         <Typography
                           variant="lead"
                           className="text-roboto text-base md:text-xl ml-2 text-white/80 bg-[#151D28]"
                         >
-                          {e.lantai} Lantai
+                          {properti?.tingkat} Lantai
                         </Typography>
                       </div>
                       <div className="flex flex-col gap-4">
@@ -166,7 +200,7 @@ const DetailPage = () => {
                             variant="lead"
                             className="text-roboto text-base md:text-xl text-white/80 bg-[#151D28]"
                           >
-                            Listrik 1000 Watt
+                            {properti?.listrik}
                           </Typography>
                         </span>
                         <span className="flex items-center gap-4">
@@ -183,7 +217,7 @@ const DetailPage = () => {
                             variant="lead"
                             className="text-roboto text-base md:text-xl text-white/80 bg-[#151D28]"
                           >
-                            Luas tanah 100m<sup>2</sup>
+                            {properti?.luas_tanah}
                           </Typography>
                         </span>
                         <span className="flex items-center gap-4">
@@ -200,7 +234,7 @@ const DetailPage = () => {
                             variant="lead"
                             className="text-roboto text-base md:text-xl text-white/80 bg-[#151D28]"
                           >
-                            Luas bangunan 80m<sup>2</sup>
+                            {properti?.luas_bangunan}
                           </Typography>
                         </span>
                         <span className="flex items-center gap-4">
@@ -217,7 +251,7 @@ const DetailPage = () => {
                             variant="lead"
                             className="text-roboto text-base md:text-xl text-white/80 bg-[#151D28]"
                           >
-                            Bangunan memiliki 2 Lantai
+                            {properti?.kolam_renang} Kolam renang
                           </Typography>
                         </span>
                       </div>
@@ -246,26 +280,10 @@ const DetailPage = () => {
                             variant="lead"
                             className="text-roboto text-base md:text-xl text-white/80 bg-[#151D28]"
                           >
-                            Garasi ukuran sedang
+                            {properti?.garasi}
                           </Typography>
                         </span>
-                        <span className="flex items-center gap-4">
-                          <div style={{ width: "30px" }}>
-                            <Image
-                              src="/kebun.svg"
-                              alt="kebun"
-                              height={20}
-                              width={20}
-                              style={{ width: "auto", height: "auto" }}
-                            />
-                          </div>
-                          <Typography
-                            variant="lead"
-                            className="text-roboto text-base md:text-xl text-white/80 bg-[#151D28]"
-                          >
-                            Kebun
-                          </Typography>
-                        </span>
+
                         <span className="flex items-center gap-4">
                           <div style={{ width: "30px" }}>
                             <Image
@@ -280,7 +298,7 @@ const DetailPage = () => {
                             variant="lead"
                             className="text-roboto text-base md:text-xl text-white/80 bg-[#151D28]"
                           >
-                            Kolam renang
+                            {properti?.kolam_renang}
                           </Typography>
                         </span>
                         <span className="flex items-center gap-4">
@@ -297,13 +315,32 @@ const DetailPage = () => {
                             variant="lead"
                             className="text-roboto text-base md:text-xl text-white/80 bg-[#151D28]"
                           >
-                            1 Gudang ukuran kecil
+                            {properti?.gudang}
+                          </Typography>
+                        </span>
+                        <span className="flex items-center gap-4">
+                          <Typography
+                            variant="lead"
+                            className="text-roboto text-sm text-white/80 bg-[#151D28]"
+                          >
+                            {properti?.deskripsi}
                           </Typography>
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className="my-8">
+                <iframe
+                  src={properti?.lokasi}
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           );

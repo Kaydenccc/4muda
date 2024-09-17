@@ -2,7 +2,7 @@
 import { Card, CardBody, Typography } from "@material-tailwind/react";
 import Image from "next/legacy/image";
 import React from "react";
-import { DefaultGallery } from "../components/Gallery";
+import { DefaultGallery } from "../../components/Gallery";
 
 const page = () => {
   return (

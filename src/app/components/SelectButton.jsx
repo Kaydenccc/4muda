@@ -12,12 +12,11 @@ const options = [
   { value: "Citra Land Celebes", label: "Citra Land Celebes" },
   { value: "Tallasa City Makassar", label: "Tallasa City Makassar" },
 ];
-const SelectButton = () => {
+const SelectButton = ({ setKompleks }) => {
   const [animal, setAnimal] = useState(null);
 
   const handleChange = (value) => {
-    console.log("value:", value);
-    setAnimal(value);
+    setKompleks(value.value);
   };
 
   return (
