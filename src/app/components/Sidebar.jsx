@@ -4,53 +4,21 @@ import { Card, Button, Typography, Checkbox } from "@material-tailwind/react";
 import SelectButtonFilter from "./SelectButtonFilter";
 import "../checkbox.css";
 import { useEffect, useState } from "react";
-import { properties } from "@/json/data";
 
-export function Sidebar({ setDataProperties, propertiesData }) {
-  const [filter, setFilter] = useState([]);
-  const [filterBekas, setFilterBekas] = useState([]);
-
-  const cekFilter = (parms) => {
-    if (filter.includes(parms)) {
-      setFilter(filter.filter((element) => element !== parms));
-    } else {
-      setFilter([...filter, parms]);
-    }
-  };
-
-  const cekFilterBekas = (parms) => {
-    if (filterBekas.includes(parms)) {
-      setFilterBekas(filterBekas.filter((element) => element !== parms));
-    } else {
-      setFilterBekas([...filterBekas, parms]);
-    }
-  };
+export function Sidebar({ filterProperties, properties }) {
+  const [filter, setFilter] = useState({
+    category: [],
+    condition: [],
+    priceSort: [],
+  });
 
   useEffect(() => {
-    setDataProperties(
-      properties?.filter((value) => filter.includes(value.type))
-    );
+    filterProperties({
+      ...filter,
+    });
   }, [filter]);
+  console.log(filter);
 
-  function parseHarga(harga) {
-    const hargaConvers = Number(harga?.split(",").join(""));
-    return hargaConvers;
-  }
-
-  // lanjutan nanti untuk filter bekas dan baru
-  const hargaTermahal = () => {
-    const sortedProperties = properties.sort(
-      (a, b) => parseHarga(b.harga) - parseHarga(a.harga)
-    );
-    setDataProperties([...sortedProperties]);
-  };
-  const hargaTermurah = () => {
-    const sortedProperties = properties.sort(
-      (a, b) => parseHarga(a.harga) - parseHarga(b.harga)
-    );
-    setDataProperties([...sortedProperties]);
-  };
-  console.log(propertiesData);
   return (
     <Card className="h-[calc(100vh-10rem)] shadow-none w-full max-w-full md:max-w-[18rem] py-4 pr-0 md:pr-8 font-['Squada_One']">
       <div className="mb-2 pt-4 w-full">
@@ -97,27 +65,52 @@ export function Sidebar({ setDataProperties, propertiesData }) {
           labelProps={{ className: "text-white" }}
           id="ripple-on"
           label="Rumah"
+          name="category"
           value="Rumah"
           ripple={true}
-          onChange={(e) => cekFilter(e.target.value)}
+          onChange={(e) => {
+            console.log("VALUE = ", e.target.value);
+            setFilter({
+              ...filter,
+              category: filter?.category.includes(e.target.value)
+                ? filter?.category?.filter((el) => el !== e.target.value)
+                : [...filter?.category, e.target?.value],
+            });
+          }}
         />
         <Checkbox
           className="!bg-white"
           labelProps={{ className: "text-white" }}
           id="Apartemen"
+          name="category"
           label="Apartemen"
           value="Apartemen"
           ripple={true}
-          onChange={(e) => cekFilter(e.target.value)}
+          onChange={(e) =>
+            setFilter({
+              ...filter,
+              category: filter?.category.includes(e.target.value)
+                ? filter?.category?.filter((el) => el !== e.target.value)
+                : [...filter?.category, e.target?.value],
+            })
+          }
         />
         <Checkbox
           className="!bg-white"
           labelProps={{ className: "text-white" }}
           id="Tanah/Lahan"
           label="Tanah/Lahan"
+          name="category"
           value="Tanah/Lahan"
           ripple={true}
-          onChange={(e) => cekFilter(e.target.value)}
+          onChange={(e) =>
+            setFilter({
+              ...filter,
+              category: filter?.category.includes(e.target.value)
+                ? filter?.category?.filter((el) => el !== e.target.value)
+                : [...filter?.category, e.target?.value],
+            })
+          }
         />
         <Checkbox
           className="!bg-white"
@@ -125,8 +118,16 @@ export function Sidebar({ setDataProperties, propertiesData }) {
           id="Ruko"
           label="Ruko"
           value="Ruko"
+          name="category"
           ripple={true}
-          onChange={(e) => cekFilter(e.target.value)}
+          onChange={(e) =>
+            setFilter({
+              ...filter,
+              category: filter?.category.includes(e.target.value)
+                ? filter?.category?.filter((el) => el !== e.target.value)
+                : [...filter?.category, e.target?.value],
+            })
+          }
         />
       </div>
       <div className="bg-[#151D28] my-[1px]  filter">
@@ -141,18 +142,34 @@ export function Sidebar({ setDataProperties, propertiesData }) {
           labelProps={{ className: "text-white" }}
           id="ripple-on"
           label="Baru"
-          value="Baru"
+          name="condition"
+          value={1}
           ripple={true}
-          onChange={(e) => cekFilterBekas(e.target.value)}
+          onChange={(e) =>
+            setFilter({
+              ...filter,
+              condition: filter?.condition.includes(e.target.value)
+                ? filter?.condition?.filter((el) => el !== e.target.value)
+                : [...filter?.condition, e.target?.value],
+            })
+          }
         />
         <Checkbox
           className="!bg-white"
           labelProps={{ className: "text-white" }}
           id="Bekas"
           label="Bekas"
-          value="Bekas"
+          name="condition"
+          value={0}
           ripple={true}
-          onChange={(e) => cekFilterBekas(e.target.value)}
+          onChange={(e) =>
+            setFilter({
+              ...filter,
+              condition: filter?.condition.includes(e.target.value)
+                ? filter?.condition?.filter((el) => el !== e.target.value)
+                : [...filter?.condition, e.target?.value],
+            })
+          }
         />
       </div>
       <div className="bg-[#151D28] rounded-b pb-2 filter">
@@ -165,7 +182,7 @@ export function Sidebar({ setDataProperties, propertiesData }) {
         <div className="p-2">
           <div className="h-8 flex m-0 p-0 mb-2 overflow-hidden w-full bg-[#D9D9D9] rounded justify-between items-center">
             <Button
-              onClick={hargaTermahal}
+              onClick={() => setFilter({ ...filter, priceSort: ["termahal"] })}
               className="focus:border-none w-full py-[4px] p-2  focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent"
             >
               Harga Termahal
@@ -173,7 +190,7 @@ export function Sidebar({ setDataProperties, propertiesData }) {
           </div>
           <div className="h-8 flex m-0 p-0  overflow-hidden w-full bg-[#D9D9D9] rounded justify-between items-center">
             <Button
-              onClick={hargaTermurah}
+              onClick={() => setFilter({ ...filter, priceSort: ["termurah"] })}
               className="focus:border-none w-full py-[4px] p-2 focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent"
             >
               Harga Termurah

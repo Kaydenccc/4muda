@@ -2,54 +2,53 @@
 
 import Link from "next/link";
 import { Typography } from "@material-tailwind/react";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Sidebar } from "@/app/components/Sidebar";
 import IconProductDes from "@/app/components/IconProductDes";
-import { properties } from "@/json/data";
 import Axios from "@/axios/axios";
+import useFilterProperties from "@/hook/useFilterProperties";
 
 const PropertiesPage = ({ searchParams }) => {
   console.log(searchParams);
-  const [propertiesData, setDataProperties] = useState(properties);
+  const { properties, filterProperties, loading, error } =
+    useFilterProperties();
 
-  // cek apakah ada data filter yang diberikan user
+  useEffect(() => {
+    // // Filter pertama kali saat component mount
+    // filterProperties({
+    //   category: "Rumah",
+    //   condition: "Baru",
+    //   priceSort: "termurah",
+    //   minPrice: "200,000,000",
+    //   maxPrice: "500,000,000",
+    // });
+  }, []);
 
+  console.log(properties);
   useEffect(() => {
     if (searchParams?.array) {
       setDataProperties(
         properties?.filter((value) => searchParams.array.includes(value.type))
       );
     } else {
-      setDataProperties(properties);
+      filterProperties({
+        category: null,
+        condition: null,
+        priceSort: null,
+        // minPrice: null,
+        // maxPrice: null,
+      });
     }
   }, []);
 
-  const getProperty = async () => {
-    try {
-      const res = await Axios.get(`/property`);
-      console.log(res.data?.data);
-      setDataProperties(res.data?.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    getProperty();
-  }, []);
-
-  console.log(propertiesData);
   return (
     <section className="px-4 md:px-[2.125rem] flex-1 flex flex-col md:flex-row pb-8">
-      <Sidebar
-        setDataProperties={setDataProperties}
-        propertiesData={propertiesData}
-      />
+      <Sidebar filterProperties={filterProperties} properties={properties} />
       <Typography variant="h4" className="block md:hidden font-bold">
         Products
       </Typography>
       <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 w-full pt-8 font-['Squada_One'] text-white">
-        {propertiesData?.map((e) => (
+        {properties?.map((e) => (
           <Link
             key={e.id}
             href={"/system/details/" + e.id}
