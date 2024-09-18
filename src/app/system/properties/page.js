@@ -13,24 +13,32 @@ const PropertiesPage = ({ searchParams }) => {
   const { properties, filterProperties, loading, error } =
     useFilterProperties();
 
+  // State untuk menandai apakah searchParams telah diproses
+  const [searchParamsProcessed, setSearchParamsProcessed] = useState(false);
+
   useEffect(() => {
-    if (searchParams?.data) {
-      const parsedArray = JSON.parse(decodeURIComponent(searchParams?.data));
-      filterProperties({
-        category: parsedArray,
-        // minPrice: null,
-        // maxPrice: null,
-      });
-    } else {
-      filterProperties({
-        category: null,
-        condition: null,
-        priceSort: null,
-        // minPrice: null,
-        // maxPrice: null,
-      });
-    }
-  }, [searchParams?.data]);
+    // Jika ada searchParams, gunakan datanya; jika tidak, set default values
+    const applyFilter = () => {
+      if (searchParams?.data) {
+        const parsedArray = JSON.parse(decodeURIComponent(searchParams.data));
+        filterProperties({
+          category: parsedArray,
+          // Kamu bisa tambahkan filter lainnya jika diperlukan
+        });
+        setSearchParamsProcessed(true); // Tandai bahwa searchParams telah diproses
+      } else if (!searchParamsProcessed && !searchParams?.data) {
+        // Hanya dijalankan jika searchParams belum diproses dan tidak ada data
+        filterProperties({
+          category: null,
+          condition: null,
+          priceSort: null,
+        });
+        setSearchParamsProcessed(true); // Tandai bahwa searchParams telah diproses
+      }
+    };
+
+    applyFilter();
+  }, [searchParams, searchParamsProcessed]); // Tambahkan filterProperties sebagai dependency
 
   return (
     <section className="px-4 md:px-[2.125rem] flex-1 flex flex-col md:flex-row pb-8">
