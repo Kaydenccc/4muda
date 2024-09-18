@@ -99,9 +99,9 @@ export function Sidebar({ filterProperties, properties }) {
           className="!bg-white"
           labelProps={{ className: "text-white" }}
           id="Tanah/Lahan"
-          label="Tanah/Lahan"
+          label="Tanah"
           name="category"
-          value="Tanah/Lahan"
+          value="Tanah"
           ripple={true}
           onChange={(e) =>
             setFilter({

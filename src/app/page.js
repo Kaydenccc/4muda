@@ -81,13 +81,6 @@ export default function Home() {
   };
 
   //cek filter apakah sudah ada di dalam variabel filter
-  const cekFilter = (parms) => {
-    if (filter.includes(parms)) {
-      setFilter(filter.filter((element) => element !== parms));
-    } else {
-      setFilter([...filter, parms]);
-    }
-  };
 
   const getProperty = async () => {
     try {
@@ -106,8 +99,15 @@ export default function Home() {
     getProperty();
   }, []);
 
-  console.log("PROPERTI=", properties);
-  // console.log(kompleks);
+  const sendArrayData = () => {
+    // Encode array menjadi string
+    const encodedArray = encodeURIComponent(JSON.stringify(filter));
+
+    // Kirim ke URL lain
+    route.push(`/system/properties?data=${encodedArray}`);
+  };
+
+  console.log(filter);
   return (
     <div>
       <main className="flex flex-col  justify-between">
@@ -139,7 +139,13 @@ export default function Home() {
                         label="Rumah"
                         value="Rumah"
                         ripple={true}
-                        onChange={(e) => cekFilter(e.target.value)}
+                        onChange={(e) =>
+                          setFilter(
+                            filter?.includes(e.target.value)
+                              ? filter?.filter((el) => el !== e.target.value)
+                              : [...filter, e.target?.value]
+                          )
+                        }
                       />
                       <Checkbox
                         className="!bg-white"
@@ -148,16 +154,28 @@ export default function Home() {
                         label="Apartemen"
                         value="Apartemen"
                         ripple={true}
-                        onChange={(e) => cekFilter(e.target.value)}
+                        onChange={(e) =>
+                          setFilter(
+                            filter?.includes(e.target.value)
+                              ? filter?.filter((el) => el !== e.target.value)
+                              : [...filter, e.target?.value]
+                          )
+                        }
                       />
                       <Checkbox
                         className="!bg-white"
                         labelProps={{ className: "text-white pr-4" }}
                         id="Tanah/Lahan"
-                        label="Tanah/Lahan"
-                        value="Tanah/Lahan"
+                        label="Tanah"
+                        value="Tanah"
                         ripple={true}
-                        onChange={(e) => cekFilter(e.target.value)}
+                        onChange={(e) =>
+                          setFilter(
+                            filter?.includes(e.target.value)
+                              ? filter?.filter((el) => el !== e.target.value)
+                              : [...filter, e.target?.value]
+                          )
+                        }
                       />
                       <Checkbox
                         className="!bg-white"
@@ -166,18 +184,20 @@ export default function Home() {
                         label="Ruko"
                         value="Ruko"
                         ripple={true}
-                        onChange={(e) => cekFilter(e.target.value)}
+                        onChange={(e) =>
+                          setFilter(
+                            filter?.includes(e.target.value)
+                              ? filter?.filter((el) => el !== e.target.value)
+                              : [...filter, e.target?.value]
+                          )
+                        }
                       />
                     </div>
                     <div className="w-fit flex justify-center gap-2 items-center bg-[#151D28] px-4 mx-4 rounded-lg">
                       <button
                         onClick={(e) => {
                           e.preventDefault();
-                          route.push(
-                            `/properties?array=${filter.join(
-                              ","
-                            )}&kompleks=${encodeURIComponent(kompleks)}`
-                          );
+                          sendArrayData();
                         }}
                         className="!max-w-fit  h-[40px] text-white font-medium md:bg-transparent text-center"
                       >

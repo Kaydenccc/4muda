@@ -14,22 +14,13 @@ const PropertiesPage = ({ searchParams }) => {
     useFilterProperties();
 
   useEffect(() => {
-    // // Filter pertama kali saat component mount
-    // filterProperties({
-    //   category: "Rumah",
-    //   condition: "Baru",
-    //   priceSort: "termurah",
-    //   minPrice: "200,000,000",
-    //   maxPrice: "500,000,000",
-    // });
-  }, []);
-
-  console.log(properties);
-  useEffect(() => {
-    if (searchParams?.array) {
-      setDataProperties(
-        properties?.filter((value) => searchParams.array.includes(value.type))
-      );
+    if (searchParams?.data) {
+      const parsedArray = JSON.parse(decodeURIComponent(searchParams?.data));
+      filterProperties({
+        category: parsedArray,
+        // minPrice: null,
+        // maxPrice: null,
+      });
     } else {
       filterProperties({
         category: null,
