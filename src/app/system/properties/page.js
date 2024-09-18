@@ -9,7 +9,7 @@ import Axios from "@/axios/axios";
 import useFilterProperties from "@/hook/useFilterProperties";
 
 const PropertiesPage = ({ searchParams }) => {
-  console.log(searchParams);
+  console.log("params=", searchParams);
   const { properties, filterProperties, loading, error } =
     useFilterProperties();
 
