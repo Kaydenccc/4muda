@@ -30,7 +30,7 @@ const PropertiesPage = ({ searchParams }) => {
         // maxPrice: null,
       });
     }
-  }, []);
+  }, [searchParams?.data]);
 
   return (
     <section className="px-4 md:px-[2.125rem] flex-1 flex flex-col md:flex-row pb-8">
