@@ -530,7 +530,7 @@ export default function EditForm() {
                 defaultValue={properti?.lokasi}
                 onChange={handleInput}
                 disabled={loading || loadingImage}
-                placeholder="Masukan lokasi properti"
+                placeholder="Masukan url lokasi properti"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                 labelProps={{
                   className: "before:content-none after:content-none",
@@ -547,7 +547,7 @@ export default function EditForm() {
                 onChange={handleInput}
                 defaultValue={properti?.vr}
                 disabled={loading || loadingImage}
-                placeholder="Masukan code vr"
+                placeholder="Masukan url vr"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                 labelProps={{
                   className: "before:content-none after:content-none",
