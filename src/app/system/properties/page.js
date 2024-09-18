@@ -5,7 +5,6 @@ import { Typography } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { Sidebar } from "@/app/components/Sidebar";
 import IconProductDes from "@/app/components/IconProductDes";
-import Axios from "@/axios/axios";
 import useFilterProperties from "@/hook/useFilterProperties";
 
 const PropertiesPage = ({ searchParams }) => {
@@ -26,7 +25,7 @@ const PropertiesPage = ({ searchParams }) => {
           // Kamu bisa tambahkan filter lainnya jika diperlukan
         });
         setSearchParamsProcessed(true); // Tandai bahwa searchParams telah diproses
-      } else if (!searchParamsProcessed && !searchParams?.data) {
+      } else if (!searchParamsProcessed) {
         // Hanya dijalankan jika searchParams belum diproses dan tidak ada data
         filterProperties({
           category: null,
@@ -38,7 +37,7 @@ const PropertiesPage = ({ searchParams }) => {
     };
 
     applyFilter();
-  }, [searchParams, searchParamsProcessed]); // Tambahkan filterProperties sebagai dependency
+  }, [searchParams?.data]); // Tambahkan filterProperties sebagai dependency
 
   return (
     <section className="px-4 md:px-[2.125rem] flex-1 flex flex-col md:flex-row pb-8">
