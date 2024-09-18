@@ -35,7 +35,7 @@ export function BlogCard({ properti }) {
               style={{
                 aspectRatio: 4 / 3,
               }}
-              className="object-cover h-full w-full relative"
+              className="object-cover !h-full !w-full !relative"
             />
           </div>
         </CardHeader>
