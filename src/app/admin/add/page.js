@@ -78,7 +78,7 @@ export default function SimpleRegistrationForm() {
       alert("Data berhasil dikirim!");
       // Reset form dan state setelah submit berhasil
       formRef.current.reset(); // Reset form HTML
-      setProperti({}); // Reset state
+      setProperti({ baru: true }); // Reset state
     } catch (error) {
       // Jika gagal
       console.error("Error:", error.response?.data || error.message);

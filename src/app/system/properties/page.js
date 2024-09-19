@@ -25,7 +25,7 @@ const PropertiesPage = ({ searchParams }) => {
           // Kamu bisa tambahkan filter lainnya jika diperlukan
         });
         setSearchParamsProcessed(true); // Tandai bahwa searchParams telah diproses
-      } else if (!searchParamsProcessed) {
+      } else if (!searchParamsProcessed && !searchParams?.data) {
         // Hanya dijalankan jika searchParams belum diproses dan tidak ada data
         filterProperties({
           category: null,
