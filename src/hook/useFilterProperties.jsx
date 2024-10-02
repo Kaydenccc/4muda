@@ -27,7 +27,7 @@ const useFilterProperties = () => {
     }
   };
 
-  return { properties, filterProperties, loading, error };
+  return { properties, filterProperties, loading, error, setProperties };
 };
 
 export default useFilterProperties;

@@ -4,13 +4,16 @@ import { Card, Button, Typography, Checkbox } from "@material-tailwind/react";
 import SelectButtonFilter from "./SelectButtonFilter";
 import "../checkbox.css";
 import { useEffect, useState } from "react";
+import Axios from "@/axios/axios";
 
-export function Sidebar({ filterProperties, properties }) {
+export function Sidebar({ filterProperties, properties, setProperties }) {
   const [filter, setFilter] = useState({
     category: [],
     condition: [],
     priceSort: [],
   });
+  const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     filterProperties({
@@ -19,13 +22,30 @@ export function Sidebar({ filterProperties, properties }) {
   }, [filter]);
   console.log(filter);
 
+  // Fungsi untuk melakukan pencarian
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    console.log("mencari");
+    try {
+      const response = await Axios.get(`/search/property?cari=${searchTerm}`);
+      console.log(response.data);
+      setProperties(response.data?.data); // Sesuaikan dengan struktur respons di Laravel
+    } catch (err) {
+      console.log(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Card className="h-[calc(100vh-10rem)] shadow-none w-full max-w-full md:max-w-[18rem] py-4 pr-0 md:pr-8 font-['Squada_One']">
-      <div className="mb-2 pt-4 w-full">
+      <form onSubmit={handleSearch} className="mb-2 pt-4 w-full">
         <div className="flex p-2 border-[3px] border-solid border-[#151D28] rounded-lg justify-center items-center">
           <input
             type="text"
             placeholder="Cari Properti"
+            onChange={(e) => setSearchTerm(e?.target?.value)}
             className="flex-[1] placeholder:text-center focus:border-none focus:outline-none placeholder:text-[#151D28]/50 text-[#151D28] placeholder:text-lg text-lg placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent"
           />
           <Button className="p-0 w-6 h-6" variant="text">
@@ -43,7 +63,10 @@ export function Sidebar({ filterProperties, properties }) {
             </svg>
           </Button>
         </div>
-      </div>
+        <Button fullWidth className="mt-2" type="submit">
+          {loading ? "Mencari..." : "Cari"}
+        </Button>
+      </form>
       {/* <div>
         <Typography variant="h5" className="text-[#151D28] font-['Squada_One']">
           Kompleks
@@ -129,74 +152,6 @@ export function Sidebar({ filterProperties, properties }) {
             })
           }
         />
-      </div>
-      <div className="bg-[#151D28] my-[1px]  filter">
-        <Typography
-          variant="h6"
-          className="text-white font-['Squada_One'] font-normal p-2"
-        >
-          Kondisi
-        </Typography>
-        <Checkbox
-          className="!bg-white"
-          labelProps={{ className: "text-white" }}
-          id="ripple-on"
-          label="Baru"
-          name="condition"
-          value={1}
-          ripple={true}
-          onChange={(e) =>
-            setFilter({
-              ...filter,
-              condition: filter?.condition.includes(e.target.value)
-                ? filter?.condition?.filter((el) => el !== e.target.value)
-                : [...filter?.condition, e.target?.value],
-            })
-          }
-        />
-        <Checkbox
-          className="!bg-white"
-          labelProps={{ className: "text-white" }}
-          id="Bekas"
-          label="Bekas"
-          name="condition"
-          value={0}
-          ripple={true}
-          onChange={(e) =>
-            setFilter({
-              ...filter,
-              condition: filter?.condition.includes(e.target.value)
-                ? filter?.condition?.filter((el) => el !== e.target.value)
-                : [...filter?.condition, e.target?.value],
-            })
-          }
-        />
-      </div>
-      <div className="bg-[#151D28] rounded-b pb-2 filter">
-        <Typography
-          variant="h6"
-          className="text-white font-['Squada_One'] font-normal p-2"
-        >
-          Harga
-        </Typography>
-        <div className="p-2">
-          <div className="h-8 flex m-0 p-0 mb-2 overflow-hidden w-full bg-[#D9D9D9] rounded justify-between items-center">
-            <Button
-              onClick={() => setFilter({ ...filter, priceSort: ["termahal"] })}
-              className="focus:border-none w-full py-[4px] p-2  focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent"
-            >
-              Harga Termahal
-            </Button>
-          </div>
-          <div className="h-8 flex m-0 p-0  overflow-hidden w-full bg-[#D9D9D9] rounded justify-between items-center">
-            <Button
-              onClick={() => setFilter({ ...filter, priceSort: ["termurah"] })}
-              className="focus:border-none w-full py-[4px] p-2 focus:outline-none placeholder:text-center focus:text-start placeholder:text-[#151D28] text-[#151D28]  placeholder:tracking-wide font-['Squada_One'] placeholder:font-['Squada_One'] bg-transparent"
-            >
-              Harga Termurah
-            </Button>
-          </div>
-        </div>
       </div>
     </Card>
   );

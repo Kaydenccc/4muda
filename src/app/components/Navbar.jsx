@@ -81,12 +81,12 @@ function NavList() {
         color="blue-gray"
         className="font-['Squada_One'] p-1 font-medium"
       >
-        <Link
+        <a
           href="/admin"
           className={`flex items-center  py-1 px-4 rounded  text-[#151D28]  border-2 border-[#151D28]`}
         >
           Login
-        </Link>
+        </a>
       </Typography>
     </ul>
   );

@@ -9,7 +9,7 @@ import useFilterProperties from "@/hook/useFilterProperties";
 
 const PropertiesPage = ({ searchParams }) => {
   console.log("params=", searchParams);
-  const { properties, filterProperties, loading, error } =
+  const { properties, filterProperties, loading, error, setProperties } =
     useFilterProperties();
 
   // State untuk menandai apakah searchParams telah diproses
@@ -41,7 +41,11 @@ const PropertiesPage = ({ searchParams }) => {
 
   return (
     <section className="px-4 md:px-[2.125rem] flex-1 flex flex-col md:flex-row pb-8">
-      <Sidebar filterProperties={filterProperties} properties={properties} />
+      <Sidebar
+        filterProperties={filterProperties}
+        properties={properties}
+        setProperties={setProperties}
+      />
       <Typography variant="h4" className="block md:hidden font-bold">
         Products
       </Typography>
