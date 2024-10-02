@@ -192,9 +192,6 @@ const DetailPage = () => {
                 Listrik: {property?.listrik}
               </Typography>
               <Typography className="" variant="small">
-                Lokasi: {property?.Lokasi}
-              </Typography>
-              <Typography className="" variant="small">
                 Luas bangunan: {property?.luas_bangunan}
               </Typography>
               <Typography className="" variant="small">
