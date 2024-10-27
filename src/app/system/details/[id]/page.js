@@ -330,15 +330,17 @@ const DetailPage = () => {
           </div>
         </div>
         <div className="my-8">
-          <iframe
-            src={properti?.lokasi}
-            width="100%"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          {property?.lokasi && (
+            <iframe
+              src={property?.lokasi}
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          )}
         </div>
       </div>
     </section>
