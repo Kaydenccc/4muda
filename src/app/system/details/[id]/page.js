@@ -330,9 +330,9 @@ const DetailPage = () => {
           </div>
         </div>
         <div className="my-8">
-          {property?.lokasi && (
+          {properti?.lokasi && (
             <iframe
-              src={property?.lokasi}
+              src={properti?.lokasi}
               width="100%"
               height="450"
               style={{ border: 0 }}
