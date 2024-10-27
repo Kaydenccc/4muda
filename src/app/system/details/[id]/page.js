@@ -112,15 +112,17 @@ const DetailPage = () => {
           </div>
         </div>
         <div className="mt-8">
-          <iframe
-            width="100%"
-            height={340}
-            frameBorder={0}
-            allow="xr-spatial-tracking; gyroscope; accelerometer"
-            allowFullScreen={true}
-            scrolling="no"
-            src={properti?.vr}
-          />
+          {properti?.vr && (
+            <iframe
+              width="100%"
+              height={340}
+              frameBorder={0}
+              allow="xr-spatial-tracking; gyroscope; accelerometer"
+              allowFullScreen={true}
+              scrolling="no"
+              src={properti?.vr}
+            />
+          )}
         </div>
         <div className="py-8">
           <div className="flex sm:gap-0 gap-4 justify-between items-center">

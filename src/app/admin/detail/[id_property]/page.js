@@ -203,15 +203,17 @@ const DetailPage = () => {
             </div>
           </div>
           <div className="border-y border-y-blue-gray-300 my-4 pb-4">
-            <iframe
-              width="100%"
-              height={340}
-              frameBorder={0}
-              allow="xr-spatial-tracking; gyroscope; accelerometer"
-              allowFullScreen={true}
-              scrolling="no"
-              src={property?.vr}
-            />
+            {property?.vr && (
+              <iframe
+                width="100%"
+                height={340}
+                frameBorder={0}
+                allow="xr-spatial-tracking; gyroscope; accelerometer"
+                allowFullScreen={true}
+                scrolling="no"
+                src={property?.vr}
+              />
+            )}
           </div>
           <div className="border-y border-y-blue-gray-300 my-4 pb-4">
             <iframe
