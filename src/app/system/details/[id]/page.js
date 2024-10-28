@@ -249,7 +249,7 @@ const DetailPage = () => {
                       variant="lead"
                       className="text-roboto text-base md:text-xl text-white/80 bg-[#151D28]"
                     >
-                      {properti?.kolam_renang} Kolam renang
+                      {properti?.kolam_renang}
                     </Typography>
                   </span>
                 </div>
