@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Sidebar } from "@/app/components/Sidebar";
 import IconProductDes from "@/app/components/IconProductDes";
 import useFilterProperties from "@/hook/useFilterProperties";
+import moment from "moment-timezone";
 
 const PropertiesPage = ({ searchParams }) => {
   console.log("params=", searchParams);
@@ -68,7 +69,12 @@ const PropertiesPage = ({ searchParams }) => {
                 <Typography variant="h4" className="font-bold">
                   {e.nama}
                 </Typography>
-                <p className="text-xs font-sans">{e.created_at}</p>
+                <p className="text-xs font-sans">
+                  {moment
+                    .utc(e.created_at)
+                    .tz("Asia/Jakarta")
+                    .format("YYYY-MM-DD")}
+                </p>
                 <p>{e.deskripsi}</p>
                 <p>
                   <span className="mr-2">IDR</span>
@@ -78,7 +84,7 @@ const PropertiesPage = ({ searchParams }) => {
               <div className="w-32 h-full flex flex-col gap-2">
                 <IconProductDes img={"../panjang.svg"} meter={e.luas_tanah} />
                 <IconProductDes img={"../luas.svg"} meter={e.luas_bangunan} />
-                <IconProductDes img={"../lantai.svg"} lantai={e.lantai} />
+                <IconProductDes img={"../lantai.svg"} lantai={e.tingkat} />
               </div>
             </div>
           </Link>

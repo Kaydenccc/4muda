@@ -9,9 +9,7 @@ const IconProductDes = ({ meter, lantai, img, alt }) => {
             <span className="ml-1">Lantai</span>
           </>
         ) : (
-          <>
-            {meter}m<sup>2</sup>
-          </>
+          <>{meter}</>
         )}
       </span>
     </div>

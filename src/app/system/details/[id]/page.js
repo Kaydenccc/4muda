@@ -45,7 +45,7 @@ const DetailPage = () => {
             />
           </div>
           <Link
-            href="/"
+            href="/system/properties"
             className="font-['Squada_One'] text-[#D1AE6C] capitalize text-base"
           >
             Kembali Ke Properti
